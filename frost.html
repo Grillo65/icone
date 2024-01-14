@@ -1,0 +1,53 @@
+<html>
+<head>
+
+<link rel="stylesheet" href="frost/Animation.css">
+
+<script type="text/JavaScript">
+
+(function(){
+    var fM = {
+        init: function(){
+          	var freezing = 0;
+            	if(parent.globals.units === 'F'){
+                freezing = 32;
+           	}
+
+            	if(parent.globals.temp <= freezing){
+                var frost = document.createElement('div');
+                var image = document.createElement('img');
+
+                frost.id = 'frost';
+                image.id = 'frostimg';
+
+                document.body.appendChild(frost);
+                frost.appendChild(image);
+		};
+    		window.frostMaker = fM;
+}());
+
+</script>
+</head>
+
+<body onload="setInterval('refresh()', 1000);">
+
+<div id="frost">
+		<img id="frostimg" />
+	</div>
+
+	<script>
+		if(screen.height > 568){
+		var img = document.getElementById('frostimg');
+		img.src = 'frost/frostbig.png';
+		img.width = screen.width;
+		img.height = screen.height;
+		}else{
+		var img = document.getElementById('frostimg');
+		img.src = 'frost/frost.png';
+		img.width = screen.width;
+		img.height = screen.height;
+		}
+	</script>
+
+	
+</html>

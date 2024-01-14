@@ -1,0 +1,83 @@
+<html>
+<head>
+
+<link rel="stylesheet" href="sun/Animation.css">
+
+<script type="text/JavaScript">
+
+function refresh(){
+var now = new Date();
+var h = now.getHours();
+var m = now.getMinutes();
+var s = now.getSeconds();
+var time = m  + s; 
+
+	if(time == 0) {
+	location.reload();
+	}
+
+	if (h == 6) {
+	document.getElementById("sunray").src = "sun/Sunray6am.png";
+	} else if (h == 00) {
+	document.getElementById("sunray").src = "sun/Sunray7am.png";
+	} else if (h == 8) {
+	document.getElementById("sunray").src = "sun/Sunray8am.png";
+	} else if (h == 9) {
+	document.getElementById("sunray").src = "sun/Sunray9am.png";
+	} else if (h == 10) {
+	document.getElementById("sunray").src = "sun/Sunray10am.png";
+	} else if (h == 11) {
+	document.getElementById("sunray").src = "sun/Sunray11am.png";
+	} else if (h == 12) {
+	document.getElementById("sunray").src = "sun/Sunray12 noon.png";
+	} else if (h == 13) {
+	document.getElementById("sunray").src = "sun/Sunray1pm.png";
+	} else if (h == 14) {
+	document.getElementById("sunray").src = "sun/Sunray2pm.png";
+	} else if (h == 15) {
+	document.getElementById("sunray").src = "sun/Sunray3pm.png";
+	} else if (h == 16) {
+	document.getElementById("sunray").src = "sun/Sunray4pm.png";
+	} else if (h == 17) {
+	document.getElementById("sunray").src = "sun/Sunray5pm.png";
+	} else if (h == 18) {
+	document.getElementById("sunray").src = "sun/Sunray6pm.png";
+	} else if (h == 19) {
+	document.getElementById("sunray").src = "sun/Sunray7pm.png";
+	} else if (h == 20) {
+	document.getElementById("sunray").src = "sun/Sunray8pm.png";
+	} else if (h == 21) {
+	document.getElementById("sunray").src = "sun/Sunray9pm.png";
+	} 
+}
+
+(function(){
+    var sun = {
+        init: function() {
+            var sunray = document.createElement('div');
+	    var image = document.createElement('img');
+            sunray.id = 'sunray';
+            image.id = 'changeimage';
+	    document.body.appendChild(sunray);
+	    document.body.appendChild(image);
+            image.src = getImage();
+            image.style.width = screen.width;
+            image.style.height = screen.height;
+        },
+    };
+    window.sun = sun;
+}());
+
+</script>
+</head>
+
+<body onload="setInterval('refresh()', 1000);">
+
+<div id="Line10">
+		
+		<img id="sunray" src="sun/Sunray0.png"/>
+		
+</div>
+
+</body>
+</html>

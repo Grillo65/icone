@@ -1,0 +1,86 @@
+<html>
+<head>
+
+<link rel="stylesheet" href="partlymoon/Animation.css">
+
+<script type="text/JavaScript">
+
+function refresh(){
+var now = new Date();
+var h = now.getHours();
+var m = now.getMinutes();
+var s = now.getSeconds();
+var time = m  + s; 
+
+		if(time == 0) {
+		location.reload();
+		}
+
+	if (h == 17) {
+	document.getElementById("moon").src = "moon/moon5pm.png";
+	} else if (h == 18) {
+	document.getElementById("moon").src = "moon/moon6pm.png";
+	} else if (h == 19) {
+	document.getElementById("moon").src = "moon/moon7pm.png";
+	} else if (h == 20) {
+	document.getElementById("moon").src = "moon/moon8pm.png";
+	} else if (h == 21) {
+	document.getElementById("moon").src = "moon/moon9pm.png";
+	} else if (h == 22) {
+	document.getElementById("moon").src = "moon/moon10pm.png";
+	} else if (h == 23) {
+	document.getElementById("moon").src = "moon/moon11pm.png";
+	} else if (h == 00) {
+	document.getElementById("moon").src = "moon/moon_midnight.png";
+	} else if (h == 1) {
+	document.getElementById("moon").src = "moon/moon1am.png";
+	} else if (h == 2) {
+	document.getElementById("moon").src = "moon/moon2am.png";
+	} else if (h == 3) {
+	document.getElementById("moon").src = "moon/moon3am.png";
+	} else if (h == 4) {
+	document.getElementById("moon").src = "moon/moon4am.png";
+	} else if (h == 5) {
+	document.getElementById("moon").src = "moon/moon5am.png";
+	} else if (h == 6) {
+	document.getElementById("moon").src = "moon/moon6am.png";
+	}
+	
+}
+
+(function(){
+    var moon = {
+        init: function(){
+			var moon = document.createElement('div');
+			var image = document.createElement('img');
+			moon.id = 'moon';
+			image.id = 'changeimage';
+			document.body.appendChild(moon);
+			document.body.appendChild(image);
+			image.src = getImage();
+			image.style.width = screen.width;
+			image.style.height = screen.height;
+        },
+    };
+    window.moon = moon;
+}());
+
+</script>
+</head>
+
+<body onload="setInterval('refresh()', 1000);">
+
+<div id="Line11">
+      		<img id="moon" src="moon/moon0.png"/>
+</div>
+
+		<title>partlycloud_night</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, user-scalable=no" />
+		<link href="partlycloud_night/Private/includes/cloud.css" rel="stylesheet" type="text/css" media="screen" charset="utf-8" />
+		<script src="partlycloud_night/Private/includes/cloud.js" type="text/javascript" charset="utf-8"></script>
+		<body margin="0" topmargin="0" leftmargin="0" scroll="no">
+		<div id="CloudContainer"></div>
+
+</body>
+</html>
